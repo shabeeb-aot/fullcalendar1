@@ -4358,16 +4358,11 @@ var EventRenderer = /** @class */ (function () {
             }
             // Grab individual elements from the combined HTML string. Use each as the default rendering.
             // Then, compute the 'el' for each segment. An el might be null if the eventRender callback returned false.
-            console.log('html',html)
             $(html).each(function (i, node) {
-                console.log('segs',segs)
                 var seg = segs[i];
                 var el = $(node);
-                console.log('i',i)
-                console.log('seg',seg)
                 
                 if(seg) {
-                    console.log('seg.footprint',seg.footprint)
                     if (hasEventRenderHandlers) {
                         el = _this.filterEventRenderEl(seg.footprint, el);
                     }
